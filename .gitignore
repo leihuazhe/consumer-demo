@@ -1,0 +1,19 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+*.hprof
+*.out
+docker-compose-home.yml
+# IntelliJ project files
+.idea/
+*.iml
+out
+gen
+.DS_Store
+.idea/
+project/target/
+project/project/
+target/
+*.log
+soa.base*/

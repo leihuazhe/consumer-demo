@@ -17,7 +17,7 @@ import wangzx.scala_commons.sql._
   *         Create by 2018/3/3 20:21
   *         email :yq1724555319@gmail.com
   */
-@KafkaConsumer(groupId = "demo_subscribe1", topic = "member_test", sessionTimeout = 60000)
+@KafkaConsumer(groupId = "demo_subscribe1", topic = "member_test", maxAttempts = 25, retryInterval = 2000)
 @Transactional(rollbackFor = Array(classOf[Throwable]))
 class DemoConsumer {
   val LOGGER = LoggerFactory.getLogger(getClass)
@@ -32,6 +32,8 @@ class DemoConsumer {
     val num = new Random().nextInt(2)
     //    val i = 1 / 0
     Thread.sleep(2000)
+
+    val i = 2 / 0;
 
     println(s"收到消息 RegisteredEvent  ${event.id} ${event.userId}")
   }
